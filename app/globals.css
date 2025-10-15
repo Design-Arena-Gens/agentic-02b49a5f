@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.75rem;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-surface text-white font-sans antialiased;
+  }
+  h1 { @apply text-4xl md:text-6xl font-semibold tracking-tight; }
+  h2 { @apply text-2xl md:text-4xl font-semibold tracking-tight; }
+  h3 { @apply text-xl md:text-2xl font-semibold; }
+  p  { @apply text-base text-white/80; }
+}
+
+@layer components {
+  .container-px { @apply max-w-content mx-auto px-4 md:px-8; }
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface/0 transition;
+  }
+  .btn-primary { @apply bg-brand hover:bg-brand-600 text-surface shadow-soft; }
+  .btn-ghost { @apply bg-white/5 hover:bg-white/10; }
+  .card {
+    @apply rounded-xl bg-white/5 border border-white/10 shadow-soft backdrop-blur;
+  }
+  .field {
+    @apply w-full appearance-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 placeholder-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400;
+  }
+  .label { @apply block text-sm font-medium text-white/80 mb-2; }
+}
